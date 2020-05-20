@@ -9,7 +9,10 @@ const url = 'https://www.amazon.in/JBL-Portable-Wireless-Powerful-Black/dp/B01MS
 async function configureBrowser(){
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto(url);
+  await page.goto(url,{
+    waitUntil:'load',
+    timeout:0
+  });
   return page;
 }
 

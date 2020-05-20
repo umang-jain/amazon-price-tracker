@@ -30,9 +30,21 @@ async function checkPrice(page){
   })
 }
 
-async function monitor(){
-  let page = await configureBrowser();
-  await checkPrice(page);
+async function startTracking(){
+  const page = await configureBrowser();
+
+  let job = new CronJob('*/15 * * * * *',function(){
+    checkPrice(page);
+  },null, true, null, null, true);
+
+  job.start();
 }
 
-monitor();
+startTracking();
+
+// async function monitor(){
+//   let page = await configureBrowser();
+//   await checkPrice(page);
+// }
+
+// monitor();

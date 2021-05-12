@@ -13,7 +13,7 @@
     "config": "^3.3.1",
     "cron": "^1.8.2",
     "express": "^4.17.1",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "puppeteer": "^3.1.0"
   }
 }
